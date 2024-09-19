@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://jogamp.org/deployment/maven/" }
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation libs.guava
+
+    // JOGL dependencies for OpenGL rendering
+    implementation 'org.jogamp.jogl:jogl-all:2.4.0'
+    implementation 'org.jogamp.gluegen:gluegen-rt:2.4.0'
+
+    implementation 'com.badlogicgames.gdx:gdx:1.9.14'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    mainClass = 'com.byabie.rdf.Main'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
