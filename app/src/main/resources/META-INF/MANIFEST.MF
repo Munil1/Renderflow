@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: com.byabie.rdf.Main
+Class-Path: lib/jogl-all.jar lib/gluegen-rt.jar lib/jogl-fonts-p0.jar lib/joal.jar lib/jocl.jar
